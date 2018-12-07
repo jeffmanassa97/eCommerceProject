@@ -91,13 +91,27 @@ public class ProductPage extends HttpServlet {
 
 				}
 				
+			PreparedStatement ps3;
+			ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+			ResultSet rs3 = ps3.executeQuery();
 				
-				
+			while(rs3.next()) {
+				// Set attributes of reviews to send to the product page
+					// First Review
+					request.setAttribute("best_name", rs3.getString(1));
+					request.setAttribute("best_description", rs3.getString(2));
+					request.setAttribute("best_cost", rs3.getString(3));
+					request.setAttribute("best_imageurl", rs3.getString(4));
+				}
 				
 				con.close();
 				
 				request.setAttribute("Hertz", "Not Applicable");
 				request.setAttribute("Subs", "Not Applicable");
+				
+				
+				
 				request.getRequestDispatcher("single.jsp").forward(request, response);
 			}
 	else if (submitType.equals("p2")) {
@@ -150,6 +164,20 @@ public class ProductPage extends HttpServlet {
 
 
 							}
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				con.close();
 				
@@ -202,11 +230,24 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
 
 
 							}
+							
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				con.close();
 				
@@ -265,6 +306,22 @@ public class ProductPage extends HttpServlet {
 
 
 							}
+							
+							
+				
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				con.close();
 				
@@ -322,6 +379,23 @@ public class ProductPage extends HttpServlet {
 
 
 							}
+							
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
+							
+							
 				
 				con.close();
 				
@@ -380,6 +454,22 @@ public class ProductPage extends HttpServlet {
 
 
 							}
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
+							
+							
 				
 				con.close();
 				
@@ -431,11 +521,25 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
-
-
 							}
+							
+							
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
+							
+							
 				
 				con.close();
 				
@@ -487,11 +591,24 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
-
 
 							}
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
+							
+							
 				
 				con.close();
 				
@@ -545,11 +662,22 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
-
 
 							}
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				
 				con.close();
@@ -603,11 +731,22 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
-
 
 							}
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				
 				
@@ -663,10 +802,22 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
 
 							}
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				
 				con.close();
@@ -722,6 +873,21 @@ public class ProductPage extends HttpServlet {
 
 
 							}
+							
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				
 				con.close();
@@ -773,10 +939,22 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
-
 							}
+							
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				
 				con.close();
@@ -828,10 +1006,23 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
 
 							}
+							
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 				
 				
 				
@@ -885,10 +1076,21 @@ public class ProductPage extends HttpServlet {
 								request.setAttribute("timestamp1", rs2.getString(4));
 								request.setAttribute("review_body1", rs2.getString(5));
 								request.setAttribute("title1", rs2.getString(6));
-								
-
-
 						}
+							
+							PreparedStatement ps3;
+							ps3 = con.prepareStatement("SELECT Name, Description, Cost, ImageURL FROM Product WHERE SKU =(SELECT SKU FROM Product WHERE Product.order_quant = (SELECT MAX(Product.order_quant) FROM Product));");
+
+							ResultSet rs3 = ps3.executeQuery();
+								
+							while(rs3.next()) {
+								// Set attributes of reviews to send to the product page
+									// First Review
+									request.setAttribute("best_name", rs3.getString(1));
+									request.setAttribute("best_description", rs3.getString(2));
+									request.setAttribute("best_cost", rs3.getString(3));
+									request.setAttribute("best_imageurl", rs3.getString(4));
+								}
 			
 			
 			

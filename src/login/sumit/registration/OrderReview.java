@@ -83,6 +83,40 @@ public class OrderReview extends HttpServlet {
 		ps1.close();
 		rs1.close();
 		
+		//-------------------------------------------------------------------------------------------------
+		// Update product order quantity
+		PreparedStatement ps9;
+		ps9 = con.prepareStatement("SELECT order_quant FROM Product WHERE SKU = ?;");
+		ps9.setString(1, sku);
+		// ResultSet contains the data produced by the query
+		// executeQuery is for passing selected values into a ResultSet
+		ResultSet rs9 = ps9.executeQuery();
+		
+		int quant = 0;
+		
+		// Get the current order quant for product
+		while(rs9.next()) {
+			quant = Integer.parseInt(rs9.getString(1));
+		}
+		
+		
+		ps9.close();
+		rs9.close();
+		
+		quant++;
+		PreparedStatement ps10;
+		ps10 = con.prepareStatement("UPDATE Product SET order_quant = ? WHERE SKU = ?;");
+		ps10.setString(1, Integer.toString(quant));
+		ps10.setString(2, sku);
+		
+		ps10.executeUpdate();
+		ps10.close();
+	
+	
+		
+		//-------------------------------------------------------------------------------------------------
+		
+		
 		
 		// Update quantity if customer has bought the product before
 		if((customer_id.equals(temp1)) && (sku.equals(temp2))){

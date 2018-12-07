@@ -285,8 +285,23 @@
                 
                 
                 
-                </p>
-                
+                </p>  
+          </div>
+         <div class="row">
+            <h4 class="m_11">Best Selling Product</h4>
+            <div class="col-md-4 product1">
+              <img src=${best_imageurl} class="img-responsive" alt="" />
+              <div class="shop_desc">
+                <a href="single.html"> </a>
+                <h3><a href="single.html"></a><a href="#">${best_name}</a></h3>
+                <p>${best_description}</p>
+                <span class="actual">$${best_cost}</span><br />
+                <ul class="buttons">
+                  <li class="shop_btn"><a href="#">Read More</a></li>
+                  <div class="clear"></div>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
